@@ -1,0 +1,42 @@
+Step 1 – Choose your shared password
+
+Pick a phrase you will share only with your trusted guests, for example:
+
+current --> "prawn-and-prejudice-2025"
+
+Longer phrases with spaces or punctuation are better.
+Avoid something obvious like “shrimp123”.
+
+You’ll never store this phrase on the site, only its hash.
+
+Step 2 – Generate a SHA-256 hash of your password
+
+You only have to do this once, whenever you change the password.
+
+Quick way: run a tiny snippet in your browser
+
+Open any page of your site in Chrome/Firefox.
+
+Press F12 → go to the Console tab.
+
+Paste this exactly:
+
+(async () => {
+  const password = "prawn-and-prejudice-2025"; // <-- put YOUR phrase here
+  const enc = new TextEncoder().encode(password);
+  const buf = await crypto.subtle.digest("SHA-256", enc);
+  const hashArray = Array.from(new Uint8Array(buf));
+  const hashHex = hashArray.map(b => b.toString(16).padStart(2, "0")).join("");
+  console.log(hashHex);
+})();
+
+
+Hit Enter.
+
+The console will print a long hex string, like:
+
+9f3c0b5b8f4f...etc
+
+Copy that full hex string somewhere safe; we’ll paste it into scripts.js in a moment.
+
+Anyone viewing your source will only see this hash, not the original phrase.

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="Alexander Escobar" />
+    <title>Shrimp Pantheon · Scoreboard</title>
+
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <nav class="main-nav">
+      <div class="nav-inner">
+        <div class="nav-left-spacer"></div>
+
+        <button class="nav-toggle" aria-label="Toggle navigation">
+          <span class="nav-toggle-bar"></span>
+          <span class="nav-toggle-bar"></span>
+          <span class="nav-toggle-bar"></span>
+        </button>
+
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="rules.html">Rules</a></li>
+          <li><a href="scoreboard.html">Scoreboard</a></li>
+          <li><a href="schedule.html">Schedule</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <!-- Overlay for mobile nav -->
+    <div class="nav-overlay"></div>
+
+    <main class="page page--scoreboard">
+      <header class="page-header">
+        <p class="page-kicker">Shrimp Pantheon</p>
+        <h1 class="page-title">Scoreboard</h1>
+        <div class="gold-divider"></div>
+      </header>
+
+      <section class="scoreboard-header">
+        <h2 class="scoreboard-split-heading">
+          <span id="scoreboard-year"></span>
+          &middot; Split <span id="scoreboard-split"></span>
+        </h2>
+        <p class="scoreboard-split-subtitle">Split 1: Jan 1 - Jun 30 &nbsp;&bull;&nbsp; Split 2: Jul 1 - Dec 31</p>
+      </section>
+
+      <section class="scoreboard-table-section" aria-label="Player rankings">
+        <div class="scoreboard-status" id="scoreboard-status">Loading current split scores…</div>
+
+        <div class="scoreboard-table-wrapper">
+          <table class="scoreboard-table">
+            <thead>
+              <tr>
+                <th scope="col">Rank</th>
+                <th scope="col">Player</th>
+                <th scope="col">Score</th>
+              </tr>
+            </thead>
+            <tbody id="scoreboard-body">
+              <!-- Filled dynamically by scoreboard.js -->
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- NEW: Hall of Fame -->
+      <section class="scoreboard-hof">
+        <h2 class="rules-heading">Hall of Fame</h2>
+        <div id="scoreboard-hof-content" class="scoreboard-hof-content">
+          <p class="scoreboard-status">Loading Hall of Fame…</p>
+        </div>
+      </section>
+
+      <section class="scoreboard-rules">
+        <h2 class="rules-heading">Scoring Rules</h2>
+        <p>How points are awarded, what counts as a victory, and any tie-breaking procedures can be documented here for the Pantheon's record.</p>
+        <ul class="scoreboard-rules-list">
+          <li>Each game awards points according to the agreed scoring system.</li>
+          <li>Player totals are summed across all games in the current split.</li>
+          <li>Rankings are determined by total score; ties may share a rank or be broken by your chosen house rules.</li>
+        </ul>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <span id="copyright"></span>
+    </footer>
+
+    <script src="scripts.js"></script>
+    <script src="scoreboard.js"></script>
+  </body>
+</html>
