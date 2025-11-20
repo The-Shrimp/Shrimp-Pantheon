@@ -4,6 +4,9 @@ Pick a phrase you will share only with your trusted guests, for example:
 
 current --> "prawn-and-prejudice-2025"
 
+*********NOTE**********
+no, this isn't secure, this is literally just for fun, and to try out new code.
+
 Longer phrases with spaces or punctuation are better.
 Avoid something obvious like “shrimp123”.
 
